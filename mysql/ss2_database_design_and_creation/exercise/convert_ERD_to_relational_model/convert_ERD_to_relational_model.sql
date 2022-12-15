@@ -1,66 +1,66 @@
-create database if not exists QUAN_LY_KHO;
-use QUAN_LY_KHO;
+create database if not exists quan_ly_kho;
+use quan_ly_kho;
 
-create table PHIEU_XUAT(
-SO_PX int auto_increment primary key,
-NGAY_XUAT datetime
+create table phieu_xuat(
+  so_px int auto_increment primary key, 
+  ngay_xuat datetime
 );
 
-create table VAT_TU(
-MA_VT int auto_increment primary key,
-TEN_VT varchar(50)
+create table vat_tu(
+  ma_vt int auto_increment primary key, 
+  ten_vt varchar(50)
 );
 
-create table CHI_TIET_PHIEU_XUAT(
-SO_PX int,
-MA_VT int,
-DG_XUAT double,
-SL_XUAT int,
-foreign key (SO_PX) references PHIEU_XUAT(SO_PX),
-foreign key (MA_VT) references VAT_TU(MA_VT)
+create table chi_tiet_phieu_xuat(
+  so_px int, 
+  ma_vt int, 
+  dg_xuat double, 
+  sl_xuat int, 
+  foreign key (so_px) references phieu_xuat(so_px), 
+  foreign key (ma_vt) references vat_tu(ma_vt)
 );
 
-create table PHIEU_NHAP(
-SO_PN int auto_increment primary key,
-NGAY_NHAP datetime
+create table phieu_nhap(
+  so_pn int auto_increment primary key, 
+  ngay_nhap datetime
 );
 
-create table CHI_TIET_PHIEU_NHAP(
-SO_PN int,
-MA_VT int,
-DG_NHAP double,
-SL_NHAP int,
-foreign key (SO_PN) references PHIEU_NHAP(SO_PN),
-foreign key (MA_VT) references VAT_TU(MA_VT)
+create table chi_tiet_phieu_nhap(
+  so_pn int, 
+  ma_vt int, 
+  dg_nhap double, 
+  sl_nhap int, 
+  foreign key (so_pn) references phieu_nhap(so_pn), 
+  foreign key (ma_vt) references vat_tu(ma_vt)
 );
 
-create table NHA_CC(
-MA_NCC int auto_increment primary key,
-TEN_NCC varchar(40),
-DIA_CHI varchar(50)
+create table nha_cc(
+  ma_ncc int auto_increment primary key, 
+  ten_ncc varchar(40), 
+  dia_chi varchar(50)
 );
 
-create table SDT(
-MA_NCC int,
-SDT varchar(20),
-foreign key (MA_NCC) references NHA_CC(MA_NCC)
+create table sdt(
+  ma_ncc int, 
+  sdt varchar(20), 
+  foreign key (ma_ncc) references nha_cc(ma_ncc)
 );
 
-create table DON_DH(
-SO_DH int auto_increment primary key,
-NGAY_DH datetime
+create table don_dh(
+  so_dh int auto_increment primary key, 
+  ngay_dh datetime
 );
 
-create table CUNG_CAP(
-MA_NCC int,
-SO_DH int,
-foreign key (MA_NCC) references NHA_CC(MA_NCC),
-foreign key (SO_DH) references DON_DH(SO_DH)
+create table cung_cap(
+  ma_ncc int, 
+  so_dh int, 
+  foreign key (ma_ncc) references nha_cc(ma_ncc), 
+  foreign key (so_dh) references don_dh(so_dh)
 );
 
-create table CHI_TIET_DON_DAT_HANG(
-MA_VT int,
-SO_DH int,
-foreign key (MA_VT) references VAT_TU(MA_VT),
-foreign key (SO_DH) references DON_DH(SO_DH)
+create table chi_tiet_don_dat_hang(
+  ma_vt int, 
+  so_dh int, 
+  foreign key (ma_vt) references vat_tu(ma_vt), 
+  foreign key (so_dh) references don_dh(so_dh)
 );
