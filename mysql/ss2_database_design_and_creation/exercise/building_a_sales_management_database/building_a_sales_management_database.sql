@@ -23,7 +23,8 @@ create table product(
 
 create table orderdetail (
   product_id int, 
-  order_id int, 
+  order_id int,
+  orderdetail_QTY int,
   foreign key (product_id) references product(product_id), 
   foreign key (order_id) references `order`(order_id)
 );
