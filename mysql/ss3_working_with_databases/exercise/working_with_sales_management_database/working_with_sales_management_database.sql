@@ -26,29 +26,33 @@ values (1, 1, 3),
        (3, 1, 8),
        (2, 5, 4),
        (2, 3, 3);
-	
-
 
 -- Hiển thị các thông tin  gồm oID, oDate, oPrice của tất cả 
 -- các hóa đơn trong bảng Order
 
-select order_id,order_date,order_total_price
+select order_id, order_date, order_total_price
 from `order`;
 
 -- Hiển thị danh sách các khách hàng đã mua hàng, và danh sách 
 -- sản phẩm được mua bởi các khách
 
-select customer_name,product_name
+select customer_name, product_name
 from orderdetail od
-join product p on od.product_id = p.product_id
-join `order` o on od.order_id = o.order_id
-join customer c on o.customer_id=c.customer_id;
+         join product p on od.product_id = p.product_id
+         join `order` o on od.order_id = o.order_id
+         join customer c on o.customer_id = c.customer_id;
 
 -- Hiển thị tên những khách hàng không mua bất kỳ một sản phẩm nào
 
-
+select customer_name
+from customer
+where customer_id not in (select `order`.customer_id from `order`);
 
 -- Hiển thị mã hóa đơn, ngày bán và giá tiền của từng hóa đơn (giá 
 -- một hóa đơn được tính bằng tổng giá bán của từng loại mặt hàng 
 -- xuất hiện trong hóa đơn. Giá bán của từng loại được tính = odQTY*pPrice)
 
+select order_date, (orderdetail_QTY * product_price) asorder_total_price
+from `order` o
+         join orderdetail od on o.order_id = od.order_id
+         join product p on od.product_id = p.product_id;
