@@ -100,36 +100,31 @@ drop view v_product;
 
 -- Tạo store procedure lấy tất cả thông tin của tất cả các sản phẩm trong bảng product
 
-delimiter
-//
+delimiter //
 create procedure get_products()
 begin
 select *
 from products;
-end
-//
+end //
 delimiter ;
 call get_products();
 
 -- Tạo store procedure thêm một sản phẩm mới
 
-delimiter
-//
+delimiter //
 create procedure set_products(in productCode varchar (10), productName varchar (50), productPrice double,
                               productAmount int, productDescription varchar (50), productStatus tinyint)
 begin
 insert into products(product_code, product_name, product_price, product_amount, product_description, product_status)
 values (productCode, productName, productPrice, productAmount, productDescription, productStatus);
-end
-//
+end //
 delimiter ;
 call set_products('054','iphone 15 promax', 5000000, 35,'sản mới phẩm của Aple',1);
 call get_products();
 
 -- Tạo store procedure sửa thông tin sản phẩm theo id
 
-delimiter
-//
+delimiter //
 create procedure set_products_by_id(in enterId int, productCode varchar (10), productName varchar (50),
                                     productPrice double,
                                     productAmount int, productDescription varchar (50), productStatus tinyint)
@@ -142,23 +137,22 @@ set product_code       = productCode,
     product_description= productDescription,
     product_status     = productStatus
 where id = enterId;
-end
-//
+end //
 delimiter ;
 call set_products_by_id(1,'1111','super phone',50000000, 1,'sản phẩm đặc biết của Aple',1);
 call get_products();
 
 -- Tạo store procedure xoá sản phẩm theo id
 
-delimiter
-//
+delimiter //
 create procedure delete_products_by_id(in enterId int)
 begin
 delete
 from products
 where id = enterId;
-end
-//
+end //
 delimiter ;
 call delete_products_by_id(1);
 call get_products();
+set
+sql_safe_updates = 0;
