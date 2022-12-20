@@ -53,4 +53,4 @@ from khach_hang kh
      hop_dong_chi_tiet hdct on hd.ma_hop_dong = hdct.ma_hop_dong
          left join
      dich_vu_di_kem dvdk on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
-group by ma_hop_dong, ma_khach_hang;
+group by hd.ma_hop_dong, kh.ma_khach_hang;
