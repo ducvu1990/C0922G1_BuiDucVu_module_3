@@ -19,8 +19,8 @@ where lk.ma_loai_khach = 1
 -- vào 6 tháng đầu năm 2021.
 
 select hd.ma_hop_dong,
-       nv.ho_ten,
-       kh.ho_ten,
+       nv.ho_ten as nhan_vien,
+       kh.ho_ten as khach_hang,
        kh.so_dien_thoai,
        dv.ten_dich_vu,
        sum(hdct.so_luong) as so_luong_dich_vu_di_kem,
@@ -32,12 +32,9 @@ from hop_dong hd
          join nhan_vien nv on hd.ma_nhan_vien = nv.ma_nhan_vien
 where quarter(ngay_lam_hop_dong) = 4 and year (ngay_lam_hop_dong) = 2020
   and hd.ma_hop_dong not in (
-select hd.ma_dich_vu
+select hd.ma_hop_dong
 from hop_dong hd
-    join khach_hang kh
-on hd.ma_khach_hang = kh.ma_khach_hang
-where quarter(ngay_lam_hop_dong) = 1
-  and quarter(ngay_lam_hop_dong) = 2
+where quarter(ngay_lam_hop_dong) in (1,2)
   and year (ngay_lam_hop_dong) = 2021
     )
 group by hd.ma_hop_dong;
