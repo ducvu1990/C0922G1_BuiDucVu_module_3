@@ -54,7 +54,7 @@ having sum(ifnull(hdct.so_luong, 0)) >= all (select sum(ifnull(hdct.so_luong, 0)
 -- ma_hop_dong, ten_loai_dich_vu, ten_dich_vu_di_kem, so_lan_su_dung (được tính dựa trên việc count các ma_dich_vu_di_kem).
 
 select hd.ma_hop_dong,
-       ldv.ten_laoi_dich_vu,
+       ldv.ten_loai_dich_vu,
        dvdk.ten_dich_vu_di_kem,
        count(dvdk.ma_dich_vu_di_kem) as so_lan_su_dung
 from dich_vu dv
@@ -62,7 +62,7 @@ from dich_vu dv
          join hop_dong hd on dv.ma_dich_vu = hd.ma_dich_vu
          join hop_dong_chi_tiet hdct on hd.ma_hop_dong = hdct.ma_hop_dong
          join dich_vu_di_kem dvdk on hdct.ma_dich_vu_di_kem = dvdk.ma_dich_vu_di_kem
-group by hdct.ma_hop_dong_chi_tiet
+group by dvdk.ma_dich_vu_di_kem
 having so_lan_su_dung = 1;
 
 -- 15.	Hiển thi thông tin của tất cả nhân viên bao gồm ma_nhan_vien, ho_ten, ten_trinh_do, ten_bo_phan, so_dien_thoai, 
@@ -75,4 +75,4 @@ from nhan_vien nv
          join hop_dong hd on nv.ma_nhan_vien = hd.ma_nhan_vien
 where year (ngay_lam_hop_dong) in (2020, 2021)
 group by nv.ma_nhan_vien
-having count (hd.ma_nhan_vien) <= 3;
+having count(hd.ma_nhan_vien) <= 3;

@@ -69,7 +69,7 @@ values ("NGUYỄN THỊ HÀO", "1970-11-07", 0, "643431213", "0945423362", "THIH
         "24 LÝ THƯỜNG KIỆT, QUẢNG NGÃI", 1),
        ("NGUYỄN TÂM ĐẮC", "1989-07-01", 1, "344343432", "0987654321", "DACTAM@GMAIL.COM", "22 NGÔ QUYỀN, ĐÀ NẴNG", 2);
 
-insert into loai_dich_vu(ten_laoi_dich_vu)
+insert into loai_dich_vu(ten_loai_dich_vu)
 values ("VILLA"),
        ("HOUSE"),
        ("ROOM");
