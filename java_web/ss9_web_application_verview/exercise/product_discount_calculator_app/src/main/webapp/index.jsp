@@ -7,6 +7,7 @@
 <body>
 <h1>Product Discount Calculator</h1>
 <form action="/display-discount" method="post">
+
     <label>Product Description: </label><br>
     <input type="text" name="product_description" size="30"><br>
 
@@ -14,9 +15,10 @@
     <input type="text" name="list_price" size="30"><br>
 
     <label>Discount Percent: </label><br>
-    <input type="text" name="discount_percent">
+    <input type="text" name="discount_percent"><br>
 
     <input type="submit" value="Calculate Discount">
+
 </form>
 </body>
 </html>

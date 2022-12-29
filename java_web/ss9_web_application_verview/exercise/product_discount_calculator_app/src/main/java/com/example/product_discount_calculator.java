@@ -24,11 +24,11 @@ public class product_discount_calculator extends HttpServlet {
 
         PrintWriter writer = response.getWriter();
         writer.println("<html>");
-        writer.println("<h1>" + productDescription + "</h1>");
-        writer.println("<h1>" + listPrice + "</h1>");
-        writer.println("<h1>" + discountPercent + "</h1>");
-        writer.println("<h1>" + discountAmount + "</h1>");
-        writer.println("<h1>" + discountPrice + "</h1>");
+        writer.println("<h1>Product Description: " + productDescription + "</h1>");
+        writer.println("<h1>List Price: " + listPrice + "</h1>");
+        writer.println("<h1>Discount Percent: " + discountPercent + "</h1>");
+        writer.println("<h1>Discount Amount: " + discountAmount + "</h1>");
+        writer.println("<h1>Discount Price: " + discountPrice + "</h1>");
         writer.println("</html>");
     }
 }
