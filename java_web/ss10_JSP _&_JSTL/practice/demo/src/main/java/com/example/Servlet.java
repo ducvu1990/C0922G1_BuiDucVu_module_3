@@ -1,15 +1,17 @@
 package com.example;
 
-import model.Calculator;
+import model.demoa;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
 
-@WebServlet(name = "CalculatorServlet", value = "/calculator")
-public class CalculatorServlet extends HttpServlet {
+@WebServlet(name = "Servlet", value = "/calculator1")
+public class Servlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -21,19 +23,20 @@ public class CalculatorServlet extends HttpServlet {
         float firstOperand = Float.parseFloat(request.getParameter("firstOperand"));
         float secondOperand = Float.parseFloat(request.getParameter("secondOperand"));
 
-        String resultString;
+
+        String aa;
 
 
         try {
-            float result = Calculator.calculate(firstOperand,secondOperand,operator);
-            resultString = String.valueOf(firstOperand) + " " + String.valueOf(operator) + " " + String.valueOf(secondOperand) +
+            float result = demoa.calculate(firstOperand,secondOperand,operator);
+            aa = String.valueOf(firstOperand) + " " + String.valueOf(operator) + " " + String.valueOf(secondOperand) +
                     " = " + String.valueOf(result);
-            request.setAttribute("resultString",resultString);
-            request.getRequestDispatcher("result.jsp").forward(request,response);
+            request.setAttribute("stringList",aa);
+            request.getRequestDispatcher("list.jsp").forward(request,response);
         }catch (Exception e){
-            resultString = e.getMessage();
-            request.setAttribute("resultString",resultString);
-            request.getRequestDispatcher("result.jsp").forward(request,response);
+            aa = e.getMessage();
+            request.setAttribute("stringList",aa);
+            request.getRequestDispatcher("list.jsp").forward(request,response);
         }
     }
 }
