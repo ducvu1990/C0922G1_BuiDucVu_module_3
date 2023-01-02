@@ -24,7 +24,7 @@
     </div>
     <div class="col-md-6"></div>
     <div class="col-md-3 justify-content-center align-items-center d-flex">
-        <h1 class="text-white" style="font-family: 'Bodoni MT Black'">BÙI ĐỨC VŨ</h1>
+        <h1 class="text-white" style="font-family: Magneto">Bui Duc Vu</h1>
     </div>
 </div>
 
