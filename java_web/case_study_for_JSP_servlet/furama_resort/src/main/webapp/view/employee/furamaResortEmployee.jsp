@@ -43,7 +43,7 @@
 
             <%--Employee button--%>
             <li class="nav-item">
-              <a class="nav-link active text-white" aria-current="page" href="#">Service List</a>
+              <a class="nav-link active text-white" aria-current="page" href="#">Employee List</a>
             </li>
             <li class="nav-link active text-white" aria-current="page">|</li>
             <%--Customer button--%>
@@ -60,7 +60,7 @@
 
             <%--Contrac button--%>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Modal deletes the service</a>
+              <a class="nav-link text-white" href="#">Modal deletes the Employee</a>
             </li>
           </ul>
           <form class="d-flex" role="search">
