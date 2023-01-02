@@ -1,12 +1,17 @@
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        Dropdown link
-    </a>
-    <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Service List</a></li>
-        <li><a class="dropdown-item" href="#">Add new service</a></li>
-        <li><a class="dropdown-item" href="#">Edit service</a></li>
-        <li><a class="dropdown-item" href="#">Modal deletes the service</a></li>
-    </ul>
-</li>
+<p>
+
+    <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        Button with data-bs-target
+    </button>
+</p>
+<div class="collapse" id="collapseExample">
+    <div class="card card-body">
+        Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.
+    </div>
+</div>
+
+
+
+<a class="btn btn-primary" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+    Link with href
+</a>

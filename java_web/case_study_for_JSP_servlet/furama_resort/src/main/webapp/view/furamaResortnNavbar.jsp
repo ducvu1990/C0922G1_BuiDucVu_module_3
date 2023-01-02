@@ -5,23 +5,67 @@
         <a class="navbar-brand text-white" href="#">Home</a>
         <div class="collapse navbar-collapse" id="navbarScroll">
             <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+
+                <%--Employee button--%>
                 <li class="nav-item">
                     <a class="nav-link active text-white" aria-current="page" href="#">Employee</a>
                 </li>
+                <%--Customer button--%>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#">Customer</a>
                 </li>
+
+                <%--Service button--%>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Dropdown link
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Service List</a></li>
-                        <li><a class="dropdown-item" href="#">Add new service</a></li>
-                        <li><a class="dropdown-item" href="#">Edit service</a></li>
-                        <li><a class="dropdown-item" href="#">Modal deletes the service</a></li>
-                    </ul>
+                    <div class="btn-group ">
+                        <button class="btn btn-secondary dropdown-toggle" type="button"
+                                data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
+                            Service
+                        </button>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <button type="button" class="btn btn-secondary"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    Service List
+                                </button>
+                            </li>
+                            <li>
+                                <div class="btn-group dropend">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        Add new service
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Villa</a></li>
+                                        <li><a class="dropdown-item" href="#">House</a></li>
+                                        <li><a class="dropdown-item" href="#">Room</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="btn-group dropend">
+                                    <button type="button" class="btn btn-secondary dropdown-toggle"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                        Edit service
+                                    </button>
+                                    <ul class="dropdown-menu">
+                                        <li><a class="dropdown-item" href="#">Villa</a></li>
+                                        <li><a class="dropdown-item" href="#">House</a></li>
+                                        <li><a class="dropdown-item" href="#">Room</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li>
+                                <button type="button" class="btn btn-secondary"
+                                        data-bs-toggle="dropdown" aria-expanded="false">
+                                    Modal deletes the service
+                                </button>
+                        </ul>
+                    </div>
                 </li>
+
+                <%--Contrac button--%>
                 <li class="nav-item">
                     <a class="nav-link text-white" href="#">Contrac</a>
                 </li>
