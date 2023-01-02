@@ -39,16 +39,16 @@
 
                         <%--Employee button--%>
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="/view/furamaResortEmployee.jsp">Employee</a>
+                            <a class="nav-link active text-white" aria-current="page" href="/view/employee/furamaResortEmployee.jsp">Employee</a>
                         </li>
                         <%--Customer button--%>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="/view/furamaResortCustomer.jsp">Customer</a>
+                            <a class="nav-link text-white" href="/view/customer/furamaResortCustomer.jsp">Customer</a>
                         </li>
 
                         <%--Service button--%>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-white" href="/view/furamaResortService.jsp">Service</a>
+                            <a class="nav-link text-white" href="/view/service/furamaResortService.jsp">Service</a>
                         </li>
 
                         <%--Contrac button--%>
