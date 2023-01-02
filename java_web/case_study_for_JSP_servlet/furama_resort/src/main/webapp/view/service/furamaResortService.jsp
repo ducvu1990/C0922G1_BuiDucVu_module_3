@@ -45,18 +45,36 @@
                         <li class="nav-item">
                             <a class="nav-link active text-white" aria-current="page" href="#">Service List</a>
                         </li>
-                            <li class="nav-link active text-white" aria-current="page">|</li>
+                        <li class="nav-link active text-white" aria-current="page">|</li>
                         <%--Customer button--%>
-                        <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Add new service</a>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                Add new Service
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Villa</a></li>
+                                <li><a class="dropdown-item" href="#">House</a></li>
+                                <li><a class="dropdown-item" href="#">Room</a></li>
+                            </ul>
                         </li>
-                            <li class="nav-link active text-white" aria-current="page">|</li>
+
+                        <li class="nav-link active text-white" aria-current="page">|</li>
 
                         <%--Service button--%>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-white" href="#">Edit service</a>
+                            <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                Edit service
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Villa</a></li>
+                                <li><a class="dropdown-item" href="#">House</a></li>
+                                <li><a class="dropdown-item" href="#">Room</a></li>
+                            </ul>
                         </li>
-                            <li class="nav-link active text-white" aria-current="page">|</li>
+                        <li class="nav-link active text-white" aria-current="page">|</li>
 
                         <%--Contrac button--%>
                         <li class="nav-item">
