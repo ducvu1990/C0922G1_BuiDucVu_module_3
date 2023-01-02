@@ -2,33 +2,29 @@
   Created by IntelliJ IDEA.
   User: cubin
   Date: 02/01/2023
-  Time: 9:40 SA
+  Time: 9:49 SA
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Furama Resort Service</title>
+    <title>Furama Resort Home</title>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
+
 </head>
 <body>
 <div class="row bg-info">
-
     <div class="col-md-3 justify-content-center d-flex ">
         <img src="https://ib.vib.com.vn/banners/Promotion/20220621154454120_furama.png" alt="logo" style="width: 60%">
     </div>
-
-    <div class="col-md-6 justify-content-center align-items-center d-flex">
-        <h1 class="text-white" style="font-family: Playfair Display">Service</h1>
-    </div>
-
+    <div class="col-md-6"></div>
     <div class="col-md-3 justify-content-center align-items-center d-flex">
-        <h1 class="text-white" style="font-family: Playfair Display">BÙI ĐỨC VŨ</h1>
+        <h1 class="text-white" style="font-family: 'Bodoni MT Black'">BÙI ĐỨC VŨ</h1>
     </div>
 </div>
 
@@ -43,24 +39,21 @@
 
                         <%--Employee button--%>
                         <li class="nav-item">
-                            <a class="nav-link active text-white" aria-current="page" href="#">Service List</a>
+                            <a class="nav-link active text-white" aria-current="page" href="/view/furamaResortEmployee.jsp">Employee</a>
                         </li>
-                            <li class="nav-link active text-white" aria-current="page">|</li>
                         <%--Customer button--%>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Add new service</a>
+                            <a class="nav-link text-white" href="/view/furamaResortCustomer.jsp">Customer</a>
                         </li>
-                            <li class="nav-link active text-white" aria-current="page">|</li>
 
                         <%--Service button--%>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-white" href="#">Edit service</a>
+                            <a class="nav-link text-white" href="/view/furamaResortService.jsp">Service</a>
                         </li>
-                            <li class="nav-link active text-white" aria-current="page">|</li>
 
                         <%--Contrac button--%>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Modal deletes the service</a>
+                            <a class="nav-link text-white" href="#">Contrac</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -108,5 +101,10 @@
     <div class="card-footer text-muted">
     </div>
 </div>
+</body>
+</html>
+</head>
+<body>
+
 </body>
 </html>
