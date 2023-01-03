@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface ICustomerService {
     List<Customer> finAll();
-    boolean save(Customer customer);
+    void save(Customer customer);
     Customer findById(int id);
     void update(int id, Customer customer);
     void remove(int id);

@@ -24,17 +24,17 @@ public class CustomerService implements ICustomerService {
 
     @Override
     public List<Customer> finAll() {
-        return customerRepository.finAll();
+        return new ArrayList<>(customerMap.values());
     }
 
     @Override
-    public boolean save(Customer customer) {
-        customerRepository.seve(customer);
+    public void save(Customer customer) {
+        customerMap.put(customer.getId(), customer);
     }
 
     @Override
     public Customer findById(int id) {
-        return customerRepository.findById(id);
+        return customerMap.get(id);
     }
 
     @Override
