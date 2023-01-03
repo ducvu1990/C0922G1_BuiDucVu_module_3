@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@WebServlet(name = "CustomerServlet", value = "/CustomerServlet")
+@WebServlet(name = "CustomerServlet", value = "/Customer")
 public class CustomerServlet extends HttpServlet {
     private static List<Customer> customerList = new ArrayList<>();
     static {

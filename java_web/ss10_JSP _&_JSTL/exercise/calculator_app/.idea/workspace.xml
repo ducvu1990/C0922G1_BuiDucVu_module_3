@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="3490e8f5-7280-4284-9a73-00984aab38a9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../list_of_customers/src/main/java/com/example/CustomerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../list_of_customers/src/main/java/com/example/CustomerServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../list_of_customers/src/main/webapp/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../list_of_customers/src/main/webapp/navbar.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +51,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/codeGym_module_3/java_web/ss10_JSP _&_JSTL/exercise/dddddddd"
+    "last_opened_file_path": "D:/codeGym_module_3/java_web/ss10_JSP _&_JSTL/exercise/calculator_app"
   }
 }]]></component>
   <component name="RunManager">
@@ -150,6 +152,8 @@
       <option name="presentableId" value="Default" />
       <updated>1672484668147</updated>
       <workItem from="1672484670140" duration="10452000" />
+      <workItem from="1672731336536" duration="214000" />
+      <workItem from="1672731711361" duration="56000" />
     </task>
     <servers />
   </component>
