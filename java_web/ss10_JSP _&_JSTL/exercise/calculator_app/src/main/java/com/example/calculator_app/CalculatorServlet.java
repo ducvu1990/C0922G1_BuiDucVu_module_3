@@ -1,4 +1,4 @@
-package com.example;
+package com.example.calculator_app;
 
 import model.Calculator;
 

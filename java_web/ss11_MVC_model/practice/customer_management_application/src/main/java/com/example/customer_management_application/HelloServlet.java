@@ -1,4 +1,4 @@
-package com.example.calculator_app;
+package com.example.customer_management_application;
 
 import java.io.*;
 import javax.servlet.http.*;
