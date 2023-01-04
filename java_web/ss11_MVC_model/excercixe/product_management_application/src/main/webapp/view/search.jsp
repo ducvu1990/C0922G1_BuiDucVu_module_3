@@ -35,15 +35,17 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Color</th>
             <th>Price</th>
+            <th>Describe</th>
+            <th>Producer</th>
         </tr>
         <c:forEach items='${requestScope["products1"]}' var="product">
             <tr>
                 <td>${product.getId()}</td>
                 <td>${product.getName()}</td>
-                <td>${product.getColor()}</td>
                 <td>${product.getPrice()}</td>
+                <td>${product.getDescribe()}</td>
+                <td>${product.getProducer()}</td>
             </tr>
         </c:forEach>
     </table>

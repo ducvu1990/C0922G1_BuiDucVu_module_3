@@ -202,16 +202,18 @@ public class ProductServlet extends HttpServlet {
     private void updateProduct(HttpServletRequest request, HttpServletResponse response) {
         int id =Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
-        String color = request.getParameter("color");
         double price = Double.parseDouble(request.getParameter("price"));
+        String describe = request.getParameter("describe");
+        String producer =request.getParameter("producer");
         Product product = this.productService.finById(id);
         RequestDispatcher dispatcher;
         if (product == null){
             dispatcher = request.getRequestDispatcher("view/error-404.jsp");
         }else {
             product.setName(name);
-            product.setColor(color);
             product.setPrice(price);
+            product.setDescribe(describe);
+            product.setProducer(producer);
             this.productService.update(id,product);
             request.setAttribute("product", product);
             request.setAttribute("message", "Product information was update");
@@ -228,11 +230,12 @@ public class ProductServlet extends HttpServlet {
 
     private void createProduct(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
-        String color = request.getParameter("color");
         double price = Double.parseDouble(request.getParameter("price"));
+        String describe = request.getParameter("describe");
+        String producer = request.getParameter("producer");
         int id = (int) (Math.random()*100);
 
-        Product product = new Product(id,name,color,price);
+        Product product = new Product(id,name,price,describe,producer);
         productService.save(product);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/create.jsp");
         request.setAttribute("message", "New Product was created");

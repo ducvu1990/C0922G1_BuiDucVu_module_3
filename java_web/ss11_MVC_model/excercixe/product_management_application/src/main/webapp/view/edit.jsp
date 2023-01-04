@@ -33,12 +33,16 @@
         <td><input type="text" name="name" value="${requestScope["product"].getName()}"></td>
       </tr>
       <tr>
-        <td>Color: </td>
-        <td><input type="text" name="color" value="${requestScope["product"].getColor()}"></td>
-      </tr>
-      <tr>
         <td>Price: </td>
         <td><input type="text" name="price" value="${requestScope["product"].getPrice()}"></td>
+      </tr>
+      <tr>
+        <td>Describe: </td>
+        <td><input type="text" name="describe" value="${requestScope["product"].getDescribe()}"></td>
+      </tr>
+      <tr>
+        <td>Producer: </td>
+        <td><input type="text" name="producer" value="${requestScope["product"].getProducer()}"></td>
       </tr>
       <tr>
         <td></td>

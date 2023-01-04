@@ -23,8 +23,9 @@
   <tr>
     <th>Id</th>
     <th>Name</th>
-    <th>Color</th>
     <th>Price</th>
+    <th>Describe</th>
+    <th>Producer</th>
     <th>Edit</th>
     <th>Delete</th>
   </tr>
@@ -32,8 +33,9 @@
     <tr>
       <td><a href="/Products?action=view&id=${product.getId()}">${product.getId()}</a></td>
       <td>${product.getName()}</td>
-      <td>${product.getColor()}</td>
       <td>${product.getPrice()}</td>
+      <td>${product.getDescribe()}</td>
+      <td>${product.getProducer()}</td>
       <td><a href="/Products?action=edit&id=${product.getId()}">Edit</a></td>
       <td><a href="/Products?action=delete&id=${product.getId()}">Delete</a></td>
     </tr>
