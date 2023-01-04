@@ -9,30 +9,30 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ProductService implements IProductService {
-    private IProductRepository productRepository = new ProductRepository();
+    private final IProductRepository productRepository = new ProductRepository();
 
     @Override
     public List<Product> finAll() {
-        return new ArrayList<>(productRepository.finAll());
+        return this.productRepository.finAll();
     }
 
     @Override
     public void save(Product product) {
-        productRepository.save(product);
+        this.productRepository.save(product);
     }
 
     @Override
     public Product finById(int id) {
-        return productRepository.finById(id);
+        return this.productRepository.finById(id);
     }
 
     @Override
     public void update(int id, Product product) {
-        productRepository.update(id, product);
+        this.productRepository.update(id, product);
     }
 
     @Override
     public void remove(int id) {
-        productRepository.remove(id);
+        this.productRepository.remove(id);
     }
 }
