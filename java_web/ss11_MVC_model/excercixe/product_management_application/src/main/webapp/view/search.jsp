@@ -20,7 +20,7 @@
     <fieldset>
         <legend>Search Product</legend>
         <tr>
-            <td>Id:</td>
+            <td>Name:</td>
             <td><input type="text" name="searchName"></td>
         </tr>
         <tr>
