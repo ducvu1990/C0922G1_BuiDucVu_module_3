@@ -20,8 +20,8 @@
     <fieldset>
         <legend>Search Product</legend>
         <tr>
-            <td>Id: </td>
-            <td><input type="text" name="searchId"></td>
+            <td>Id:</td>
+            <td><input type="text" name="searchName"></td>
         </tr>
         <tr>
             <td></td>
@@ -30,20 +30,22 @@
     </fieldset>
 </form>
 
-<c:if test='${requestScope["product"] != null}'>
-    <table>
+<c:if test='${requestScope["products1"] != null}'>
+    <table border="1">
         <tr>
-            <td>Name: </td>
-            <td>${requestScope["product"].getName()}</td>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Color</th>
+            <th>Price</th>
         </tr>
-        <tr>
-            <td>Color: </td>
-            <td>${requestScope["product"].getColor()}</td>
-        </tr>
-        <tr>
-            <td>Price: </td>
-            <td>${requestScope["product"].getPrice()}</td>
-        </tr>
+        <c:forEach items='${requestScope["products1"]}' var="product">
+            <tr>
+                <td>${product.getId()}</td>
+                <td>${product.getName()}</td>
+                <td>${product.getColor()}</td>
+                <td>${product.getPrice()}</td>
+            </tr>
+        </c:forEach>
     </table>
 </c:if>
 </body>

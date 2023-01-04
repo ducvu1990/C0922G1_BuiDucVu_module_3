@@ -8,6 +8,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @WebServlet(name = "ProductServlet", value = "/Products")
@@ -157,13 +158,20 @@ public class ProductServlet extends HttpServlet {
     }
 
     private void searchProduct(HttpServletRequest request, HttpServletResponse response) {
-        int id = Integer.parseInt(request.getParameter("searchId"));
-        Product product = this.productService.finById(id);
+        List<Product> products = this.productService.finAll();
+        List<Product> products1 = new ArrayList<>();
+        String name = request.getParameter("searchName");
+
+        for (Product item : products) {
+            if (item.getName().matches(name +".*")){
+                products1.add(item);
+            }
+        }
         RequestDispatcher dispatcher;
-        if (product == null) {
+        if (products1 == null){
             dispatcher = request.getRequestDispatcher("view/error-404.jsp");
         }else {
-            request.setAttribute("product", product);
+            request.setAttribute("products1",products1);
             dispatcher = request.getRequestDispatcher("view/search.jsp");
         }
         try {
