@@ -109,17 +109,17 @@ public class UserRepository implements IUserRepository {
 
     @Override
     public List<User> getAllUser() {
-        List<User> user = null;
+        List<User> user = new ArrayList<>();
         String query = "call get_user()";
         Connection connection = BaseRepository.getConnectDB();
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
             ResultSet rs = preparedStatement.executeQuery();
             while (rs.next()) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-                String email = rs.getString("email");
-                String country = rs.getString("country");
+                int id = rs.getInt(1);
+                String name = rs.getString(2);
+                String email = rs.getString(3);
+                String country = rs.getString(4);
                 user.add(new User(id, name, email, country));
             }
         } catch (SQLException e) {
