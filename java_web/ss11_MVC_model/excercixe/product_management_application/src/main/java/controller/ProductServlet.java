@@ -215,7 +215,7 @@ public class ProductServlet extends HttpServlet {
             product.setDescribe(describe);
             product.setProducer(producer);
             this.productService.update(id,product);
-            request.setAttribute("product", product);
+//            request.setAttribute("product", product);
             request.setAttribute("message", "Product information was update");
             dispatcher = request.getRequestDispatcher("view/edit.jsp");
             try {
