@@ -14,10 +14,15 @@ name varchar(50)
 
 create table user_permision(
 user_id int(11),
-permision_id int(11),
-foreign key (user_id) references users(id),
-foreign key (permision_id) references permision(id)
+permision_id int(11)
 );
+-- foreign key (user_id) references users(id),
+-- foreign key (permision_id) references permision(id)
+
+insert into Permision(id, name) values(1, 'add'),
+(2, 'edit'),
+(3, 'delete'),
+(4, 'view');
 
 insert into users(name,email,country)
 values('Ngọc Hậu', 'hau@abc.com','Việt Nam'),
@@ -41,10 +46,23 @@ BEGIN
     where users.id = user_id;
 
     END$$
+    
+    DELIMITER $$
+CREATE PROCEDURE delete_user_by_id(IN user_id INT)
+BEGIN
+    DELETE FROM users WHERE id = user_id;
+    END$$
 
 DELIMITER ;
 
-  
+DELIMITER $$
+CREATE PROCEDURE get_user()
+BEGIN
+SELECT * FROM users;
+END$$
+DELIMITER ;
+
+  call get_user();
 
 DELIMITER $$
 
@@ -63,5 +81,22 @@ BEGIN
     INSERT INTO users(name, email, country) VALUES(user_name, user_email, user_country);
 
     END$$
+
+DELIMITER ;
+
+DELIMITER $$
+
+CREATE PROCEDURE update_user(
+IN user_id INT,
+IN user_name varchar(50),
+IN user_email varchar(50),
+IN user_country varchar(50)
+)
+
+BEGIN
+UPDATE users
+SET name = user_name, email = user_email, country = user_country
+WHERE id = user_id;
+END$$
 
 DELIMITER ;
