@@ -93,17 +93,17 @@
 </div>
 
 <div class="row">
-    <div class="col-md-3 justify-content-center d-flex" style="background-color: #a3cfbb; top: auto">
-        <ul class="list-group">
-            <li class="list-group-item disabled" style="font-size: x-large; background-color: #a3cfbb">A disabled item
+    <div class="col-md-1 justify-content-center d-flex" style="background-color: #a3cfbb; top: auto">
+        <ul class="list-group" >
+            <li class="list-group-item disabled" style="font-size: x-large; background-color: #a3cfbb">item 0
             </li>
-            <li class="list-group-item" style="font-size: x-large; background-color: #a3cfbb">A second item</li>
-            <li class="list-group-item" style="font-size: x-large; background-color: #a3cfbb">A third item</li>
-            <li class="list-group-item" style="font-size: x-large; background-color: #a3cfbb">A fourth item</li>
-            <li class="list-group-item" style="font-size: x-large; background-color: #a3cfbb">And a fifth one</li>
+            <li class="list-group-item" style="font-size: x-large; background-color: #a3cfbb">item 1</li>
+            <li class="list-group-item" style="font-size: x-large; background-color: #a3cfbb">item 2</li>
+            <li class="list-group-item" style="font-size: x-large; background-color: #a3cfbb">item 3</li>
+            <li class="list-group-item" style="font-size: x-large; background-color: #a3cfbb">item 4</li>
         </ul>
     </div>
-    <div class="col-md-9 justify-content-center align-items-center d-flex">
+    <div class="col-md-11 justify-content-center align-items-center d-flex">
         <div class="card text-bg-dark px-0 justify-content-center align-items-center d-flex w-100 h-100">
             <img src="https://luhanhvietnam.com.vn/du-lich/vnt_upload/news/07_2019/mua-he.jpg" class="card-img"
                  alt="img">
