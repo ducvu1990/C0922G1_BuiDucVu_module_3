@@ -11,16 +11,9 @@
 <head>
     <title>Furama Resort Customer</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-    </script>
-    <%--  <style>--%>
-    <%--    body{--%>
-    <%--      background-image: url("https://pix10.agoda.net/hotelImages/109/10953/10953_16030216470040397599.jpg?ca=6&ce=1&s=1024x768");--%>
-    <%--    }--%>
-    <%--  </style>--%>
+    <%--    Phân trang--%>
+    <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="datatables/css/dataTables.bootstrap5.min.css" />
 </head>
 <body>
 <div class="row bg-info">
@@ -81,11 +74,11 @@
         </ul>
     </div>
     <div class="col-md-11 vh-100">
-        <p>${requestScope["message"]}</p>
-        <table class="table">
+        <table id="table123" class="table">
             <thead>
             <tr>
                 <th scope="col">#</th>
+                <th hidden scope="col">Id</th>
                 <th scope="col">Name</th>
                 <th scope="col">Birthday</th>
                 <th scope="col">Gender</th>
@@ -98,35 +91,36 @@
                 <th scope="col">Delete</th>
             </tr>
             </thead>
-            <tbody class="table-group-divider">
+            <tbody>
             <c:forEach var="customer" items="${customers}" varStatus="status">
                 <tr>
-                    <th scope="row">${status.count}</th>
+                    <td>${status.count}</td>
                     <td hidden>${customer.getId()}</td>
                     <td>${customer.getName()}</td>
                     <td>${customer.getBirthday()}</td>
-                    <td>
+
                         <c:if test="${customer.isGender()}">
-                            <span>Nam</span>
+                            <td>Nam</td>
                         </c:if>
                         <c:if test="${!customer.isGender()}">
-                            <span>Nữ</span>
+                            <td>Nữ</td>
                         </c:if>
-                    </td>
+
                     <td>${customer.getIdCard()}</td>
                     <td>${customer.getPhone()}</td>
                     <td>${customer.getEmail()}</td>
                     <td>${customer.getCustomerType().getNameType()}</td>
                     <td>${customer.getAddress()}</td>
-                    <th><a href="/Customers?action=edit&id=${customer.getId()}">Edit</a></th>
-                    <th>
+                    <td><a href="/Customers?action=edit&id=${customer.getId()}">Edit</a></td>
+                    <td>
                         <button  onclick="infoDelete('${customer.getId()}','${customer.getName()}')" type="button" class="btn btn-danger"
                                  data-bs-toggle="modal" data-bs-target="#exampleModal">
                             Delete
                         </button>
-                    </th>
+                    </td>
                 </tr>
             </c:forEach>
+
             </tbody>
         </table>
     </div>
@@ -155,7 +149,7 @@
             <form action="/Customers?action=delete" method="post">
                 <div class="modal-body">
                     <input hidden type="text" id="deleteId" name="deleteId">
-                    <span>Bạn có muốn xoá sinh viên </span>
+                    <span>Do you want to delete an Customer </span>
                     <span  style="color: red" id="deleteName"></span>
                 </div>
                 <div class="modal-footer">
@@ -172,6 +166,19 @@
         document.getElementById("deleteId").value=id;
         document.getElementById("deleteName").innerText=name;
     }
+</script>
+<script src="jquery/jquery-3.6.3.min.js"></script>
+<script src="datatables/js/jquery.dataTables.min.js"></script>
+<script src="datatables/js/dataTables.bootstrap5.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $('#table123').dataTable({
+                "dom": 'lrtip',
+                "lengthChange": false,
+                "pageLength": 5
+            }
+        )
+    })
 </script>
 </body>
 </html>

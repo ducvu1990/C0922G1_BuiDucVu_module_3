@@ -94,13 +94,15 @@ public class CustomerServlet extends HttpServlet {
 
     private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("deleteId"));
-        List<Customer> customers = this.customerService.finAllCustomer();
-        request.setAttribute("customers", customers);
         RequestDispatcher dispatcher;
         if (this.customerService.deleteCustomer(id)) {
+            List<Customer> customers = this.customerService.finAllCustomer();
+            request.setAttribute("customers", customers);
             request.setAttribute("message", "delete successfully");
             dispatcher = request.getRequestDispatcher("view/customer/customer.jsp");
         } else {
+            List<Customer> customers = this.customerService.finAllCustomer();
+            request.setAttribute("customers", customers);
             request.setAttribute("message", "delete failed");
             dispatcher = request.getRequestDispatcher("view/customer/customer.jsp");
         }

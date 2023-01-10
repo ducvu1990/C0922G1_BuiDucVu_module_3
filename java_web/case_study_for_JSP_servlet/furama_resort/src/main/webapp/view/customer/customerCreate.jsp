@@ -15,11 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
     </script>
-    <%--  <style>--%>
-    <%--    body{--%>
-    <%--      background-image: url("https://pix10.agoda.net/hotelImages/109/10953/10953_16030216470040397599.jpg?ca=6&ce=1&s=1024x768");--%>
-    <%--    }--%>
-    <%--  </style>--%>
+
 </head>
 <body>
 <div class="row bg-info">

@@ -40,7 +40,7 @@
                         <%--Employee button--%>
                         <li class="nav-item">
                             <a class="nav-link active text-white" aria-current="page"
-                               href="/view/employee/employee.jsp">Employee</a>
+                               href="/Employees">Employee</a>
                         </li>
                         <%--Customer button--%>
                         <li class="nav-item">
@@ -49,7 +49,7 @@
 
                         <%--Service button--%>
                         <li class="nav-item dropdown">
-                            <a class="nav-link text-white" href="/view/service/service.jsp">Service</a>
+                            <a class="nav-link text-white" href="/Facilitys">Service</a>
                         </li>
 
                         <%--Contrac button--%>
