@@ -22,20 +22,20 @@ public class EmployeeServlet extends HttpServlet {
         }
         switch (action) {
             case "create":
-                showFormCreateCustomer(request, response);
+                showFormCreateEmployee(request, response);
                 break;
             case "edit":
-                showFormEditCustomer(request,response);
+                showFormEditEmployee(request,response);
                 break;
             default:
                 listEmployee(request, response);
         }
     }
-    private void showFormEditCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void showFormEditEmployee(HttpServletRequest request, HttpServletResponse response) {
         
     }
 
-    private void showFormCreateCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void showFormCreateEmployee(HttpServletRequest request, HttpServletResponse response) {
        
     }
 
@@ -61,25 +61,25 @@ public class EmployeeServlet extends HttpServlet {
         }
         switch (action) {
             case "create":
-                CreateCustomer(request, response);
+                CreateEmployee(request, response);
                 break;
             case "edit":
-                editCustomer(request,response);
+                editEmployee(request,response);
                 break;
             case "delete":
-                deleteCustomer(request,response);
+                deleteEmployee(request,response);
                 break;
         }
     }
-    private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void deleteEmployee(HttpServletRequest request, HttpServletResponse response) {
         
     }
 
-    private void editCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void editEmployee(HttpServletRequest request, HttpServletResponse response) {
         
     }
 
-    private void CreateCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void CreateEmployee(HttpServletRequest request, HttpServletResponse response) {
         
     }
 }

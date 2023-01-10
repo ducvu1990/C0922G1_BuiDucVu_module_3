@@ -10,11 +10,6 @@
 <html>
 <head>
     <title>Furama Resort Customer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous">
-    </script>
 
     <%--    Phân trang--%>
     <link rel="stylesheet" href="bootstrap520/css/bootstrap.min.css" />
@@ -27,7 +22,7 @@
     </div>
 
     <div class="col-md-6 justify-content-center align-items-center">
-        <h1 class="text-white" style="font-family: Playfair Display">Customer</h1><br>
+        <h1 class="text-white" style="font-family: Playfair Display">Contract</h1><br>
         <h3 style="color: red">${requestScope["message"]}</h3>
     </div>
 
@@ -48,12 +43,12 @@
                         <%--Employee button--%>
                         <li class="nav-item">
                             <a class="nav-link active text-white" aria-current="page" href="/Customers">List of
-                                customers</a>
+                                Contract</a>
                         </li>
                         <li class="nav-link active text-white" aria-current="page">|</li>
                         <%--Customer button--%>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="/Customers?action=create">Add new customers</a>
+                            <a class="nav-link text-white" href="/Customers?action=create">Add new Contract</a>
                         </li>
                     </ul>
                     <form class="d-flex" role="search">
@@ -104,12 +99,12 @@
                     <td>${customer.getName()}</td>
                     <td>${customer.getBirthday()}</td>
 
-                        <c:if test="${customer.isGender()}">
-                            <td>Nam</td>
-                        </c:if>
-                        <c:if test="${!customer.isGender()}">
-                            <td>Nữ</td>
-                        </c:if>
+                    <c:if test="${customer.isGender()}">
+                        <td>Nam</td>
+                    </c:if>
+                    <c:if test="${!customer.isGender()}">
+                        <td>Nữ</td>
+                    </c:if>
 
                     <td>${customer.getIdCard()}</td>
                     <td>${customer.getPhone()}</td>
@@ -148,7 +143,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Delete Customer</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <form action="/Customers?action=delete" method="post">

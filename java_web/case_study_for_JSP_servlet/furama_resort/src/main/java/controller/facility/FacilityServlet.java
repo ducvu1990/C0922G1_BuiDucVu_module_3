@@ -21,24 +21,24 @@ public class FacilityServlet extends HttpServlet {
         }
         switch (action) {
             case "create":
-                showFormCreateCustomer(request, response);
+                showFormCreateFacility(request, response);
                 break;
             case "edit":
-                showFormEditCustomer(request,response);
+                showFormEditFacility(request,response);
                 break;
             default:
-                listEmployee(request, response);
+                listFacility(request, response);
         }
     }
-    private void showFormEditCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void showFormEditFacility(HttpServletRequest request, HttpServletResponse response) {
 
     }
 
-    private void showFormCreateCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void showFormCreateFacility(HttpServletRequest request, HttpServletResponse response) {
 
     }
 
-    private void listEmployee(HttpServletRequest request, HttpServletResponse response) {
+    private void listFacility(HttpServletRequest request, HttpServletResponse response) {
         List<Facility> facilities = this.facilityService.finAllFacility();
         request.setAttribute("facilities", facilities);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/service/service.jsp");
@@ -60,25 +60,25 @@ public class FacilityServlet extends HttpServlet {
         }
         switch (action) {
             case "create":
-                CreateCustomer(request, response);
+                CreateFacility(request, response);
                 break;
             case "edit":
-                editCustomer(request,response);
+                editFacility(request,response);
                 break;
             case "delete":
-                deleteCustomer(request,response);
+                deleteFacility(request,response);
                 break;
         }
     }
-    private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void deleteFacility(HttpServletRequest request, HttpServletResponse response) {
 
     }
 
-    private void editCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void editFacility(HttpServletRequest request, HttpServletResponse response) {
 
     }
 
-    private void CreateCustomer(HttpServletRequest request, HttpServletResponse response) {
+    private void CreateFacility(HttpServletRequest request, HttpServletResponse response) {
 
     }
 }
