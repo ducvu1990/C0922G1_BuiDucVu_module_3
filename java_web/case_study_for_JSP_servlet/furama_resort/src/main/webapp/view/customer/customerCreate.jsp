@@ -81,7 +81,10 @@
                 <thead>
                 <tr>
                     <th scope="col">Name</th>
-                    <td><input type="text" name="name"></td>
+                    <td><input pattern="^[A-Z][a-z]*(\s[A-Z][a-z]*)+$" title="Sai rồi má" type="text" name="name" placeholder="nhập tên">
+                        <span id="errorName"></span>
+                    </td>
+
                 </tr>
                 <tr>
                     <th scope="col">Birthday</th>
@@ -102,8 +105,6 @@
                                 </c:otherwise>
                             </c:choose>
                         </select>
-<%--                        <input name="gender" type="radio" value="Nam"/>Nam--%>
-<%--                        <input name="gender" type="radio" value="Nữ"/>Nữ--%>
                     </td>
                 </tr>
                 <tr>
@@ -112,7 +113,7 @@
                 </tr>
                 <tr>
                     <th scope="col">Phone</th>
-                    <td><input type="text" name="phone"></td>
+                    <td><input type="text" name="phone" pattern="^[A-Z][a-z]*(\s[A-Z][a-z]*)+$"></td>
                 </tr>
                 <tr>
                     <th scope="col">Email</th>
@@ -136,7 +137,7 @@
                 </tr>
                 <tr>
                     <th scope="col"></th>
-                    <td><input type="submit" value="Add new customers"></td>
+                    <td><input id="btnSave" type="submit" value="Add new customers"></td>
                 </tr>
                 </thead>
             </table>
@@ -156,4 +157,28 @@
     </div>
 </div>
 </body>
+<script>
+    function checkName(name) {
+        let regName = /^[A-Z][a-z]*(\s[A-Z][a-z]*)+$/;
+        let checkedName = regName.exec(name);
+        if (!checkedName) {
+            document.getElementById("errorName").innerText = "Tên chưa đúng định dạng";
+            document.getElementById("btnSave").disabled = true;
+        } else {
+            document.getElementById("btnSave").disabled = false;
+            document.getElementById("errorName").innerText = "";
+        }
+    }
+    function checkName(name) {
+        let regName = /^([\d]{9}|[\d]{12})$/;
+        let checkedName = regName.exec(name);
+        if (!checkedName) {
+            document.getElementById("errorName").innerText = "CMND chưa đúng định dạng";
+            document.getElementById("btnSave").disabled = true;
+        } else {
+            document.getElementById("btnSave").disabled = false;
+            document.getElementById("errorName").innerText = "";
+        }
+    }
+</script>
 </html>
